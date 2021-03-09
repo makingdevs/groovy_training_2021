@@ -1,11 +1,11 @@
 class HolaMundo {
   String nombre
-  String saluda() {
+  def saluda() {
     return "Hola " + this.nombre + " !!!"
   }
-  static void main(args) {
-    HolaMundo objeto = new HolaMundo()
-    objeto.setNombre("@groovy2")
+  static def main(args) {
+    def objeto = new HolaMundo()
+    objeto.setNombre("@groovy3")
     println(objeto.saluda())
   }
 }
