@@ -4,8 +4,11 @@ class HolaMundo {
     "Hola ${this.nombre} !!!"
   }
   static main(args) {
-    def objeto = new HolaMundo()
-    objeto.setNombre("@groovy5")
+    def objeto = new HolaMundo(nombre: "@neodevelop")
+    println(objeto.saluda())
+    objeto.nombre = "@groovy6"
+    println(objeto.saluda())
+    objeto["nombre"] = "@makingdevs"
     println(objeto.saluda())
   }
 }
