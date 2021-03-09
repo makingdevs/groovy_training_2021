@@ -1,17 +1,17 @@
-public class HolaMundo {
-  private String nombre;
-  public String getNombre() {
-    return nombre;
+class HolaMundo {
+  private String nombre
+  String getNombre() {
+    return nombre
   }
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
+  void setNombre(String nombre) {
+    this.nombre = nombre
   }
-  public String saluda() {
-    return "Hola " + this.nombre + " !!!";
+  String saluda() {
+    return "Hola " + this.nombre + " !!!"
   }
-  public static void main(String[] args) {
-    HolaMundo objeto = new HolaMundo();
-    objeto.setNombre("@grailsmx");
-    System.out.println(objeto.saluda());
+  static void main(String[] args) {
+    HolaMundo objeto = new HolaMundo()
+    objeto.setNombre("@groovy")
+    System.out.println(objeto.saluda())
   }
 }
