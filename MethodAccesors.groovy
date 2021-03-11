@@ -2,7 +2,7 @@ class DoublerBean{
   public value
 
   void setValue(value){
-    this.value = value
+    this.value = value*3
   }
 
   def getValue(){
@@ -12,5 +12,8 @@ class DoublerBean{
 
 def bean = new DoublerBean(value:100)
 
-println  bean.value
-println  bean.@value
+
+bean.value = 200
+println bean.value
+bean.@value = 400
+println bean.@value
