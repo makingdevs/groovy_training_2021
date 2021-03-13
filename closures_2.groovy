@@ -4,4 +4,8 @@ def cuadrado(n, block) {
   }
 }
 
-cuadrado(10, { if(it%2 == 1) println "El cuadrado de $it, es ${it*it}" })
+cuadrado(5, { if(it%2 == 1) println "El cuadrado de $it, es ${it*it}" })
+println "*"*100
+cuadrado(5) { if(it%2 == 1) println "El cuadrado de $it, es ${it*it}" }
+println "-"*100
+cuadrado(5) { number -> if(number%2 == 1) println "El cuadrado de $number, es ${number*number}" }
