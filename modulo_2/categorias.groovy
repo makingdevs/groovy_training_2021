@@ -23,6 +23,7 @@ use(groovy.time.TimeCategory, PhoneFormat){
   println 10.hours.ago
   println 10.months.ago
   println new Date() - 30 + 15.hours
-  println new Date() - 15 - 1.year.ago
+  queDia = new Date() - 15 - 1.year.ago
 
+  println new Date().format("EEEE dd 'de' MMMM 'del' yyyy")
 }
