@@ -10,3 +10,11 @@ use(PhoneFormat) {
   println "5512345678".toFormat()
   println new StringBuffer("5587654321").toFormat()
 }
+
+use(groovy.time.TimeCategory){
+  println 10.minute.from.now
+  println 10.hours.ago
+
+  hoy = new Date()
+  println hoy - 3.months - 10.hours - 30.seconds
+}
