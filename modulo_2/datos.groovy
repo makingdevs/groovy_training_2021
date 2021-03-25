@@ -13,7 +13,7 @@ create table if not exists issue(
   id serial primary key,
   description varchar(100),
   priority integer,
-  date_created timestamp
+  date_created date
 )
 """
 
@@ -29,3 +29,32 @@ insert into issue(description, priority, date_created) values
   ('No se puede capturar receptor',4,now()),
   ('No se puede acceder al sistema',1,now());
 """
+
+def params = ["Nuevo ISSUE importante, urge para ayer", 10, java.time.LocalDate.now() - 20]
+def insertSql = "insert into issue(description, priority, date_created) values(?,?,?);"
+sql.execute insertSql, params
+
+sql.eachRow("select * from issue") { row ->
+  println row
+}
+
+dataset = sql.dataSet('issue')
+
+filterIssues = dataset.findAll {
+  it.id >= 3 && it.id <= 6
+}
+
+println "*"*100
+filterIssues.each {
+  println it
+}
+println filterIssues.sql
+
+dataset.add(
+  description: "Queremos un aumento",
+  priority: 2,
+  date_created: java.time.LocalDate.now() - 40
+)
+
+println "Conteo de registros ${sql.rows('select * from issue').size()}"
+println "Conteo de registros ${sql.rows('select count(*) as c from issue')["c"]}"
