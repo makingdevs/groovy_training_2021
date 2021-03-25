@@ -58,3 +58,5 @@ dataset.add(
 
 println "Conteo de registros ${sql.rows('select * from issue').size()}"
 println "Conteo de registros ${sql.rows('select count(*) as c from issue')["c"]}"
+
+sql.withTransaction { t -> println t.properties }
