@@ -9,7 +9,7 @@ document = jsonSlurper.parseText(payload)
 document.each { issue ->
   println "*"*100
   println """
-  ID: ${issue.id}
+  ID: ${issue.id.trim()}
   TITLE: ${issue.title.trim()}
   BODY: ${issue.body.trim()}
   LABELS:
