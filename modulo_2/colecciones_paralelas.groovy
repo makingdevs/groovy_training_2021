@@ -1,3 +1,5 @@
+import static groovyx.gpars.GParsPool.withPool
+
 def procesos = [300,400,500,100,200,900,200,200,1000,150]
 
 def benchmark(closure){
@@ -8,8 +10,10 @@ def benchmark(closure){
 }
 
 benchmark {
-  procesos.each {
-    Thread.sleep(it)
-    println it
+  withPool{
+    procesos.eachParallel {
+      Thread.sleep(it)
+      println it
+    }
   }
 }
