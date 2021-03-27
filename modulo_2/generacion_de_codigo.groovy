@@ -1,6 +1,7 @@
-@groovy.transform.TupleConstructor
-@groovy.transform.ToString(includeNames=true)
-@groovy.transform.EqualsAndHashCode
+//@groovy.transform.TupleConstructor
+//@groovy.transform.ToString(includeNames=true)
+//@groovy.transform.EqualsAndHashCode
+@groovy.transform.Canonical
 class Curso {
 
   String nombre
